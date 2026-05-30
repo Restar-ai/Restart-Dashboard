@@ -945,7 +945,7 @@ with tab1:
             st.markdown(f"""
             <div style="background:{hex_to_rgba(T['accent'], 0.08)}; border:1px solid {T['border2']}; border-radius:12px; padding:15px; margin-bottom:20px; margin-top:-5px;">
                 <div style="font-size:0.75rem; font-weight:700; color:{T['accent']}; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:5px;">
-                    🧠 Interpretasi DNA Karier ({code3})
+                    Interpretasi DNA Karier ({code3})
                 </div>
                 <div style="font-size:0.85rem; color:{T['text_secondary']}; line-height:1.6;">
                     Lingkungan kerja ini paling optimal bagi individu yang suka <b>{HOLLAND_DESC[top1]}</b>, 
