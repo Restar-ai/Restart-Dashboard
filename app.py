@@ -104,7 +104,7 @@ def hex_to_rgba(hex_color, alpha=1.0):
         return f"rgba(35,59,94,{alpha})"
 
 # ================================================================
-# DESKRIPSI PROFESI UMKM (Fitur Baru)
+# DESKRIPSI PROFESI UMKM
 # ================================================================
 DESKRIPSI_PROFESI = {
     "Admin Data": "Mengelola, memasukkan, dan merapikan data operasional atau inventaris UMKM secara akurat dan sistematis menggunakan perangkat lunak.",
@@ -600,7 +600,7 @@ RIASEC_ID = {
     "Conventional": "C",
 }
 
-# Interpretasi Holland Code
+# INTERPRETASI HOLLAND CODE
 HOLLAND_DESC = {
     "R": "bekerja secara praktis, mengeksekusi hal teknis, dan berorientasi pada hasil nyata",
     "I": "melakukan analisis mendalam, observasi, dan pemecahan masalah logis",
@@ -673,7 +673,6 @@ df = load_and_aggregate()
 
 @st.cache_data
 def convert_df_to_csv(dataframe):
-    # Cache agar tidak komputasi ulang tiap kali tombol di klik
     return dataframe.to_csv(index=False, sep=";").encode('utf-8')
 
 
@@ -707,7 +706,7 @@ with st.sidebar:
             unsafe_allow_html=True
         )
 
-    # ================= TOGGLE LIGHT / DARK MODE =================
+    # ================= PILIH PROFESI =================
     st.markdown("---")
     st.markdown('<span class="section-label">Pilih Profesi</span>', unsafe_allow_html=True)
 
@@ -853,9 +852,7 @@ with tab1:
 
             st.plotly_chart(fig_b, use_container_width=True)
 
-            # ================================================================
-            # SKILL GAP ANALYSIS — SEDERHANA DI BAWAH BAR CHART
-            # ================================================================
+            # SKILL GAP ANALYSIS
             strongest_skill = sk.idxmax()
             strongest_score = sk.max()
 
@@ -939,7 +936,7 @@ with tab1:
 
             st.plotly_chart(fig_rd, use_container_width=True)
 
-            # --- FITUR BARU: INTERPRETASI KODE 3 HURUF ---
+            # INTERPRETASI KODE 3 HURUF
             top1, top2, top3 = code3[0], code3[1], code3[2]
             
             st.markdown(f"""
